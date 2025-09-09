@@ -1,242 +1,305 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ремонт помещений в СПб под ключ | Профессионально и Надежно</title>
-    <meta name="description" content="Ремонт квартир и офисов в Санкт-Петербурге под ключ. Профессионально, надежно, с гарантией. Бесплатный замер и смета.">
-    <link rel="stylesheet" href="./css/style.css">
-    <script type="application/ld+json">
-      {
-        "@context":"https://schema.org",
-        "@type":"LocalBusiness",
-        "name":"Ремонт СПб",
-        "image":"https://example.com/logo.png",
-        "telephone":"+78121234567",
-        "email":"info@remontspb.ru",
-        "address":{"@type":"PostalAddress","addressLocality":"Санкт-Петербург","streetAddress":"ул. Ремонтная, д. 10"},
-        "openingHours":"Mo-Su 09:00-21:00",
-        "areaServed":"Санкт-Петербург и ЛО",
-        "url":"https://remontspb.ru",
-        "sameAs":["https://t.me/your_company","https://wa.me/78121234567"]
-      }
-</script>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ремонт СПб — дизайн и ремонт под ключ</title>
+  <meta name="description" content="Ремонт квартир и офисов в Санкт-Петербурге — дизайн-проекты, фиксированные сроки, гарантия. Закажите бесплатный замер и смету."/>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <h1>Ремонт СПб</h1>
-    <nav>
-      <ul>
-        <li><a href="#advantages">Преимущества</a></li>
-        <li><a href="#gallery">Наши работы</a></li>
-        <li><a href="#steps">Этапы</a></li>
-        <li><a href="#contact">Контакты</a></li>
-      </ul>
-    </nav>
-    <a href="#contact" class="btn-main">Оставить заявку</a>
+  <!-- Topbar (phone / hours) -->
+  <div class="topbar">
+    <div>ПН–ВС: 09:00–20:00</div>
+    <div><a href="tel:+78122008071">+7 (812) 200-80-71</a></div>
+    <div><a href="#contact" class="top-cta">Бесплатный замер и смета</a></div>
   </div>
-</header>
 
-<main class="container">
+  <!-- Header -->
+  <header aria-label="Главная навигация">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo">RS</div>
+        <h1>Ремонт СПб</h1>
+      </div>
 
-  <section class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1>Ремонт квартир и офисов в СПб под ключ</h1>
-    <p>От замера до сдачи объекта — всё в одни руки. Прозрачные цены, фиксированные сроки и гарантия до 5 лет.</p>
-    <a href="#contact" class="btn-hero">Оставить заявку</a>
-  </div>
-</section>
+      <nav aria-label="Главное меню">
+        <ul>
+          <li><a href="#projects">Наши работы</a></li>
+          <li><a href="#prices">Услуги & цены</a></li>
+          <li><a href="#steps">Как это работает</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
 
-
-  <section id="advantages">
-  <h2>Наши преимущества</h2>
-  <div class="advantages">
-    <article class="advantage">
-      <h3>Фиксированная смета</h3>
-      <p>Цена, указанная в договоре, не меняется в процессе. Никаких «допов» и скрытых платежей — всё прозрачно с первого дня.</p>
-    </article>
-
-    <article class="advantage">
-      <h3>Сроки под контролем</h3>
-      <p>Работаем по календарному графику. За каждый день просрочки — штраф в вашу пользу. Сдаем объект ровно в срок.</p>
-    </article>
-
-    <article class="advantage">
-      <h3>Гарантия и материалы</h3>
-      <p>Используем сертифицированные смеси и трубы, предоставляем гарантию до <strong>5 лет</strong>. Закупка материалов со скидками у партнёров.</p>
-    </article>
-  </div>
-</section>
-
-
-<section id="prices">
-  <h2>Популярные услуги</h2>
-  <div class="price-cards">
-
-    <!-- Карточка 1 -->
-    <div class="price-card">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Разводка труб">
-      <div class="card-content">
-        <h3>Разводка труб водоснабжения (на тройниках)</h3>
-        <p class="unit">Ед. изм.: в/розетка</p>
-
-        <span class="badge">Хит месяца</span>
-        <p class="desc">Быстрый и экономичный способ подключения воды в санузле и кухне. Подходит для большинства типовых планировок.</p>
-
-        <p class="price">
-          <span class="old">3000 ₽</span>
-          <span class="new">2700 ₽</span>
-        </p>
-
-        <p class="time">Срок выполнения: <strong>до 1 дня</strong></p>
-        <button class="btn-order">Оставить заявку</button>
+      <div>
+        <button class="cta-header" id="openModal">Оставить заявку</button>
       </div>
     </div>
+  </header>
 
-    <!-- Карточка 2 -->
-    <div class="price-card">
-      <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80" alt="Разводка труб коллекторного типа">
-      <div class="card-content">
-        <h3>Разводка труб водоснабжения (коллекторного типа)</h3>
-        <p class="unit">Ед. изм.: в/розетка</p>
-
-        <span class="badge">Рекомендуем</span>
-        <p class="desc">Каждая точка — на отдельной линии. Стабильное давление, удобство обслуживания и минимальный риск протечек.</p>
-
-        <p class="price">
-          <span class="old">3540 ₽</span>
-          <span class="new">3186 ₽</span>
-        </p>
-
-        <p class="time">Срок выполнения: <strong>1–2 дня</strong></p>
-        <button class="btn-order">Оставить заявку</button>
+  <!-- HERO full-screen -->
+  <section class="hero" role="banner" aria-label="Hero — ремонт под ключ">
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h2>Ремонт квартир и офисов в Санкт-Петербурге под ключ</h2>
+      <p>От эскиза до сдачи — проектируем, согласуем и реализуем. Прозрачные цены, фиксированные сроки и гарантия до 5 лет.</p>
+      <div class="actions">
+        <a class="btn-hero" href="#contact">Оставить заявку</a>
+        <a class="btn-ghost" href="#projects">Посмотреть работы</a>
       </div>
     </div>
+  </section>
 
-    <!-- Карточка 3 -->
-    <div class="price-card">
-      <img src="./img/1.jpg" alt="Прокладка труб ХГ">
-      <div class="card-content">
-        <h3>Прокладка труб ХГ водоснабжения, канализации (от 2-х п.м.)</h3>
-        <p class="unit">Ед. изм.: п.м.</p>
-
-        <span class="badge">-10% сегодня</span>
-        <p class="desc">Аккуратная штроба, шумоизоляция, герметизация всех соединений. Соответствие СНиП и техпаспортам.</p>
-
-        <p class="price">
-          <span class="old">190 ₽</span>
-          <span class="new">171 ₽</span>
-        </p>
-
-        <p class="time">Срок выполнения: <strong>в день обращения*</strong></p>
-        <button class="btn-order">Оставить заявку</button>
+  <main>
+    <!-- Короткие преимущества -->
+    <section aria-labelledby="why-title">
+      <h2 class="title" style="text-align:center;margin-bottom:18px">Почему выбирают нас</h2>
+      <div class="advantages" role="list">
+        <div class="advantage" role="listitem">
+          <h3>Фиксированная смета</h3>
+          <p>Точная смета в договоре — никаких «внезапных» расходов. Мы ценим ваше спокойствие.</p>
+        </div>
+        <div class="advantage" role="listitem">
+          <h3>Гарантия до 5 лет</h3>
+          <p>Работаем на результат: документальная гарантия и сопровождение после сдачи проекта.</p>
+        </div>
+        <div class="advantage" role="listitem">
+          <h3>Контроль на каждом этапе</h3>
+          <p>Удобная коммуникация, фотоотчёты и доступ к календарю работ — вы всегда в курсе.</p>
+        </div>
       </div>
-    </div>
+    </section>
 
-  </div>
+    <!-- Projects / Works -->
+    <section id="projects" class="projects" aria-labelledby="projects-title">
+      <h2 class="title" style="text-align:center">Наши работы</h2>
 
-  <div class="more-wrap">
-    <button class="btn-more">Показать ещё</button>
-  </div>
-</section>
+      <div class="projects-grid">
+        <!-- project 1 -->
+        <article class="project-card" aria-labelledby="proj1">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80" alt="Ремонт квартиры — современный интерьер">
+          </div>
+          <div class="project-body">
+            <h3 id="proj1" class="project-title">Евроремонт студии в центре</h3>
+            <div class="project-meta">Стоимость: 1 200 000 ₽ • 35 м² • 3 месяца</div>
+            <p style="margin:6px 0 0;color:#334155;font-size:0.95rem">Полная перепланировка, дизайнерский проект и инженерные решения под ключ.</p>
+            <div class="project-stats">
+              <span class="badge">Готово</span>
+              <a href="#contact" class="btn-ghost" style="margin-left:auto">Узнать цену</a>
+            </div>
+          </div>
+        </article>
 
+        <!-- project 2 -->
+        <article class="project-card" aria-labelledby="proj2">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1505691723518-36a1b7a8c9a9?auto=format&fit=crop&w=1400&q=80" alt="Ремонт офиса современный">
+          </div>
+          <div class="project-body">
+            <h3 id="proj2" class="project-title">Капитальный ремонт офиса</h3>
+            <div class="project-meta">Стоимость: 2 400 000 ₽ • 120 м² • 4 месяца</div>
+            <p style="margin:6px 0 0;color:#334155;font-size:0.95rem">Оптимизация планировки, инженерия и качественная отделка для коммерческих пространств.</p>
+            <div class="project-stats">
+              <span class="badge" style="background:#f97316">Топ</span>
+              <a href="#contact" class="btn-ghost" style="margin-left:auto">Подробнее</a>
+            </div>
+          </div>
+        </article>
 
+        <!-- project 3 -->
+        <article class="project-card" aria-labelledby="proj3">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1505692794406-7b43878e84a7?auto=format&fit=crop&w=1400&q=80" alt="Ремонт кафе — готовый проект">
+          </div>
+          <div class="project-body">
+            <h3 id="proj3" class="project-title">Ремонт кафе — концепт и реализация</h3>
+            <div class="project-meta">Стоимость: 1 200 000 ₽ • 45 м² • 2 месяца</div>
+            <p style="margin:6px 0 0;color:#334155;font-size:0.95rem">Дизайн меню пространства, коммуникации, освещение, финишная отделка.</p>
+            <div class="project-stats">
+              <span class="badge">Коммерция</span>
+              <a href="#contact" class="btn-ghost" style="margin-left:auto">Запросить смету</a>
+            </div>
+          </div>
+        </article>
+      </div>
 
- <section id="steps" class="steps">
-  <h2>Этапы работы</h2>
+      <div style="text-align:center;margin-top:22px">
+        <button class="btn-hero" id="showMoreProjects">Показать ещё работы</button>
+      </div>
+    </section>
+
+    <!-- How it works / Steps -->
+    <section id="steps" aria-labelledby="steps-title">
+  <h2 class="title" style="text-align:center">Как начать ремонт без лишней суеты</h2>
   <div class="steps-list">
     <div class="step">
       <div class="step-number">1</div>
-      <h3>Выезд и замер — бесплатно</h3>
-      <p>Мастер приезжает в удобное время, консультирует и фиксирует особенности объекта.</p>
+      <h4>Созвон</h4>
+      <p>Короткая беседа — 5–10 минут для понимания задачи и ожиданий.</p>
     </div>
     <div class="step">
       <div class="step-number">2</div>
-      <h3>Смета и график</h3>
-      <p>В течение 24 часов получаете подробную смету и календарный план работ.</p>
+      <h4>Выезд и замер</h4>
+      <p>Специалист приезжает бесплатно, делает замеры и базовую фиксацию работ.</p>
     </div>
     <div class="step">
       <div class="step-number">3</div>
-      <h3>Договор</h3>
-      <p>Закрепляем стоимость и сроки. Работает гарантия и штрафы за просрочку.</p>
+      <h4>Смета и договор</h4>
+      <p>Подробное коммерческое предложение и договор с фиксированной ценой и сроками.</p>
     </div>
     <div class="step">
       <div class="step-number">4</div>
-      <h3>Ремонт под ключ</h3>
-      <p>Закупка материалов, демонтаж, черновые и чистовые работы, уборка.</p>
+      <h4>Ремонт</h4>
+      <p>Черновые и чистовые работы, фотоотчёты, контроль качества.</p>
     </div>
     <div class="step">
       <div class="step-number">5</div>
-      <h3>Сдача и гарантия</h3>
-      <p>Подписываем акт, выдаём гарантийный талон до 5 лет и рекомендации по уходу.</p>
+      <h4>Сдача объекта</h4>
+      <p>Финальная проверка вместе с клиентом, подписываем акт приёмки. Все недочёты устраняем сразу.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">6</div>
+      <h4>Гарантийное сопровождение</h4>
+      <p>Остаёмся на связи. Гарантия до 5 лет, бесплатные консультации и выезды по вопросам эксплуатации.</p>
     </div>
   </div>
 </section>
 
 
-<section id="reviews">
-  <h2>Отзывы клиентов</h2>
-  <div class="reviews">
-    <article class="review">
-      <img src="https://i.pravatar.cc/80?img=5" alt="Анна" class="avatar">
-      <div class="review-content">
-        <p>«Поменяли разводку и собрали санузел за два дня. Цена по договору не менялась. Рекомендую!»</p>
-        <div class="stars">★★★★★</div>
-        <strong>Анна, Василеостровский район</strong>
+    <!-- Reviews -->
+    <section id="reviews" aria-labelledby="reviews-title">
+      <h2 class="title" style="text-align:center">Отзывы клиентов</h2>
+      <div class="reviews">
+        <div class="review">
+          <img class="avatar" src="https://i.pravatar.cc/120?img=5" alt="Фото Анны">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p>«Смета точная, сроки соблюдены. Работали чисто и ответственно. Рекомендую!»</p>
+            <strong>Анна, Васильевский</strong>
+          </div>
+        </div>
+
+        <div class="review">
+          <img class="avatar" src="https://i.pravatar.cc/120?img=12" alt="Фото Ивана">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p>«Коллекторная разводка решила проблему с давлением. Отличная команда.»</p>
+            <strong>Иван, Петроградка</strong>
+          </div>
+        </div>
+
+        <div class="review">
+          <img class="avatar" src="https://i.pravatar.cc/120?img=20" alt="Фото Марии">
+          <div>
+            <div class="stars">★★★★★</div>
+            <p>«Получили дизайн-проект и реализацию в срок, всё по договору и аккуратно.»</p>
+            <strong>Мария, Центр</strong>
+          </div>
+        </div>
       </div>
-    </article>
-    <article class="review">
-      <img src="https://i.pravatar.cc/80?img=12" alt="Иван" class="avatar">
-      <div class="review-content">
-        <p>«Коллекторная схема — огонь. Давление стабильное, аккуратно всё спрятали. Убрали за собой.»</p>
-        <div class="stars">★★★★★</div>
-        <strong>Иван, Петергоф</strong>
+    </section>
+
+    <!-- Contact -->
+  <section id="contact" aria-labelledby="contact-title" class="contact-section">
+  <h2 class="title" class="section-title">Свяжитесь с нами</h2>
+  <div class="contact-grid">
+    
+    <!-- Контакты -->
+    <div class="contact-info">
+      <p><strong>Телефон:</strong> 
+        <a href="tel:+78122008071">+7 (812) 200-80-71</a>
+      </p>
+      <p><strong>Время работы:</strong><br>Ежедневно с 09:00 до 20:00</p>
+      <p><strong>Email:</strong> 
+        <a href="mailto:anfas-art@mail.ru">anfas-art@mail.ru</a>
+      </p>
+      <p><strong>Адрес:</strong><br>Санкт-Петербург, наб. Обводного канала, д.118А</p>
+    </div>
+
+    <!-- Форма -->
+    <form id="contactForm" class="contact-form">
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="tel" name="phone" placeholder="Телефон" required>
+      <textarea name="note" placeholder="Коротко опишите задачу" rows="3"></textarea>
+      <div class="form-buttons">
+        <button class="btn-hero" type="submit">Отправить</button>
+        <button class="btn-ghost" type="button" onclick="openModal()">Заказать звонок</button>
       </div>
-    </article>
-    <article class="review">
-      <img src="https://i.pravatar.cc/80?img=32" alt="Мария" class="avatar">
-      <div class="review-content">
-        <p>«Смета детальная, сроки соблюдены. Дали гарантию и чек-лист по эксплуатации.»</p>
-        <div class="stars">★★★★★</div>
-        <strong>Мария, Петроградская сторона</strong>
-      </div>
-    </article>
+    </form>
+
   </div>
 </section>
 
 
-  
+  </main>
 
-  <section id="contact" class="contact">
-  <h2>Свяжитесь с нами</h2>
-  <p>Ежедневно: <strong>09:00–21:00</strong></p>
-  <p>Телефон: <a href="tel:+78121234567">+7 (812) 123-45-67</a> &nbsp;•&nbsp;
-     Telegram: <a href="https://t.me/your_company" target="_blank" rel="noopener">@your_company</a> &nbsp;•&nbsp;
-     WhatsApp: <a href="https://wa.me/78121234567" target="_blank" rel="noopener">написать</a></p>
-  <p>Email: <a href="mailto:info@remontspb.ru">info@remontspb.ru</a></p>
-  <p>Адрес: Санкт-Петербург, ул. Ремонтная, д. 10</p>
+  <footer>
+    © 2025 Ремонт СПб • ИНН: 0000000000 • Политика конфиденциальности • <a href="https://t.me/ia_hochy_obnimashek" target="_blank">Разработчик: Хома</a>
+  </footer>
 
-  <form class="contact-form">
-    <input type="text" name="name" placeholder="Ваше имя" required>
-    <input type="tel" name="phone" placeholder="Ваш телефон" required>
-    <textarea name="message" placeholder="Коротко опишите задачу (например: «замена разводки в ванной»)."></textarea>
-    <button type="submit">Отправить</button>
-  </form>
+  <!-- Плавающие кнопки -->
+  <div class="float-actions" aria-hidden="false">
+    <a title="WhatsApp" href="https://wa.me/78122008071" target="_blank" rel="noopener">💬</a>
+  </div>
 
-  <iframe src="https://yandex.ru/map-widget/v1/-/CCUEMFxWDA" title="Карта офиса"></iframe>
-</section>
+  <!-- Модал заявка -->
+  <div class="modal" id="modal">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h3 id="modalTitle">Оставить заявку</h3>
+      <p style="margin:0 0 12px;color:#475569">Мы перезвоним в удобное время и назначим бесплатный выезд специалиста.</p>
+      <form id="modalForm">
+        <input name="mname" placeholder="Ваше имя" required />
+        <input name="mphone" placeholder="Телефон" required />
+        <textarea name="mdesc" placeholder="Коротко о задаче" rows="3"></textarea>
+        <div style="display:flex;gap:10px;margin-top:8px">
+          <button class="btn-hero" type="submit">Отправить</button>
+          <button type="button" class="btn-ghost" onclick="closeModal()">Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
+  <script>
+    // Открытие/закрытие модалки
+    const modal = document.getElementById('modal');
+    const openBtn = document.getElementById('openModal');
+    openBtn?.addEventListener('click', openModal);
+    function openModal(){ modal.classList.add('open'); document.body.style.overflow='hidden'; }
+    function closeModal(){ modal.classList.remove('open'); document.body.style.overflow=''; }
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) closeModal(); });
 
-</main>
+    // Простейшая отправка форм (пример)
+    document.getElementById('contactForm')?.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      alert('Спасибо! Ваша заявка отправлена. Мы свяжемся в ближайшее время.');
+      e.target.reset();
+    });
+    document.getElementById('modalForm')?.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      alert('Заявка принята — ожидайте звонка.');
+      closeModal();
+      e.target.reset();
+    });
 
-<footer>
-  &copy; 2025 Ремонт СПб. Все права защищены. <br>
-  Разработчик <a class="social" href="https://t.me/ia_hochy_obnimashek">Хома</a>
-</footer>
+    // Показывать ещё проекты (вставляет клоны примеров) — демонстрация
+    document.getElementById('showMoreProjects')?.addEventListener('click', ()=>{
+      const grid = document.querySelector('.projects-grid');
+      if(!grid) return;
+      // Пример: дублируем первые три карточки (в реале — подгрузка с сервера)
+      const cards = Array.from(grid.children).slice(0,3).map(c => c.cloneNode(true));
+      cards.forEach(c=>grid.appendChild(c));
+      window.scrollBy({top:300,behavior:'smooth'});
+      // отключить кнопку если слишком много
+      if(grid.children.length > 9) document.getElementById('showMoreProjects').disabled = true;
+    });
+
+    // Simple accessibility: ESC closes modal
+    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
+  </script>
 
 </body>
 </html>
