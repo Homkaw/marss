@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ремонт квартир и офисов в Санкт-Петербурге — дизайн-проекты, фиксированные сроки, гарантия. Закажите бесплатный замер и смету."/>
+  <title>Наши проекты — Ремонт СПб</title>
+  <link rel="stylesheet" href="./css/works.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div>ПН–ВС: 09:00–20:00</div>
+    <div><a href="tel:+78122008071">+7 (964) 342-82-54</a></div>
+    <div><a href="#contact" class="top-cta">Бесплатный замер и смета</a></div>
+  </div>
+
+  <!-- Header -->
+  <header aria-label="Главная навигация">
+    <div class="header-inner">
+      <a class="brand" href="./index.html">
+        <div class="logo">RS</div>
+        <h1>Ремонт СПб</h1>
+      </a>
+
+      <nav aria-label="Главное меню">
+        <ul>
+          <li><a href="./works.html">Наши работы</a></li>
+          <li><a href="./services.html">Услуги & цены</a></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <button class="cta-header" id="openModal">Оставить заявку</button>
+        <div id="authControls">
+         
+          <button id="logoutBtn" class="btn-ghost" style="display:none;">Выйти</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top:100px">
+    <h2 class="title" style="text-align:center">Наши проекты</h2>
+
+    <!-- Панель логина -->
+    <div id="loginPanel" style="display: none; margin: 30px auto; max-width: 400px; text-align: center;">
+      <h3>Авторизация администратора</h3>
+      <form id="loginForm">
+        <input type="text" id="login" placeholder="Логин" required />
+        <input type="password" id="password" placeholder="Пароль" required />
+        <button type="submit" class="btn-hero">Войти</button>
+      </form>
+    </div>
+
+    <!-- Админ панель -->
+    <div id="adminPanel" style="margin:20px 0; display:none;">
+      <h3>Добавить новый проект</h3>
+      <form id="projectForm">
+        <input type="text" id="title" placeholder="Название проекта" required />
+        <input type="text" id="meta" placeholder="Метаданные (цена, метраж, срок)" required />
+        <textarea id="desc" placeholder="Описание" required></textarea>
+        <input type="file" id="imageFile" accept="image/*" required />
+        <img id="previewImage" style="max-width: 200px; display: none; margin-top: 10px;" alt="Превью изображения" />
+        <button type="submit" class="btn-hero">Добавить проект</button>
+      </form>
+    </div>
+
+    <!-- Карточки проектов -->
+    <div id="projectsList" class="projects-grid" style="margin-top:30px;"></div>
+  </main>
+
+  <!-- Модалка заявки -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h3 id="modalTitle">Оставить заявку</h3>
+      <p style="margin:0 0 12px;color:#475569">Мы перезвоним в удобное время и назначим бесплатный выезд специалиста.</p>
+      <form id="modalForm">
+        <input name="mname" placeholder="Ваше имя" required />
+        <input name="mphone" placeholder="Телефон" required />
+        <textarea name="mdesc" placeholder="Коротко о задаче" rows="3"></textarea>
+        <div style="display:flex;gap:10px;margin-top:8px">
+          <button class="btn-hero" type="submit">Отправить</button>
+          <button type="button" class="btn-ghost" onclick="closeModal()">Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Весь JS -->
+ <script>
+const projectsList = document.getElementById("projectsList");
+const form = document.getElementById("projectForm");
+const adminPanel = document.getElementById("adminPanel");
+const imageInput = document.getElementById("imageFile");
+const preview = document.getElementById("previewImage");
+const loginForm = document.getElementById("loginForm");
+const loginPanel = document.getElementById("loginPanel");
+const logoutBtn = document.getElementById("logoutBtn");
+
+let imageDataURL = null;
+let isAdmin = false;
+
+// 🔹 Скрытый вход через 5 кликов по логотипу
+let logoClickCount = 0;
+const logo = document.querySelector(".title");
+logo?.addEventListener("click", () => {
+  logoClickCount++;
+  if (logoClickCount >= 5) {
+    loginPanel.style.display = "block"; // показываем форму
+    logoClickCount = 0; // сброс счётчика
+  }
+});
+
+const ADMIN_LOGIN = "mars";
+const ADMIN_PASSWORD = "19987";
+
+// Проверка авторизации при загрузке
+function checkAuth() {
+  isAdmin = localStorage.getItem("isAdmin") === "true";
+  toggleAdminUI(isAdmin);
+  renderProjects();
+}
+
+// Обновление интерфейса
+function toggleAdminUI(isAdmin) {
+  if (isAdmin) {
+    adminPanel.style.display = "block";
+    loginPanel.style.display = "none";
+    logoutBtn.style.display = "inline-block";
+  } else {
+    adminPanel.style.display = "none";
+    loginPanel.style.display = "none";
+    logoutBtn.style.display = "none";
+  }
+}
+
+// Обработка формы логина
+loginForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const login = document.getElementById("login").value;
+  const password = document.getElementById("password").value;
+
+  if (login === ADMIN_LOGIN && password === ADMIN_PASSWORD) {
+    localStorage.setItem("isAdmin", "true");
+    isAdmin = true;
+    toggleAdminUI(true);
+    renderProjects();
+  } else {
+    alert("Неверный логин или пароль");
+  }
+});
+
+// Выход
+logoutBtn?.addEventListener("click", () => {
+  localStorage.removeItem("isAdmin");
+  isAdmin = false;
+  toggleAdminUI(false);
+  renderProjects();
+});
+
+// Остальной код (загрузка изображений, проекты, модалка) у тебя остаётся без изменений
+checkAuth();
+</script>
+
+</body>
+</html>
